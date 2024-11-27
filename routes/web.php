@@ -11,6 +11,7 @@ use App\Http\Controllers\trendController;
 use App\Http\Controllers\HelmetController;
 use App\Http\Controllers\JacketController;
 use App\Http\Controllers\RatingController;
+use App\Http\Controllers\reportController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
@@ -55,6 +56,11 @@ Route::middleware(['auth'])->group(function(){
                 Route::get('page',[adminController::class,'listPage'])->name('list#page');
                 Route::get('change/role',[adminController::class,'changeRole'])->name('change#role');
                 Route::get('delete/{id}',[adminController::class,'listDelete'])->name('list#delete');
+            });
+
+            //report chart
+            Route::prefix('report')->group(function(){
+                Route::get('page',[reportController::class,'reportPage'])->name('report#page');
             });
 
             //category

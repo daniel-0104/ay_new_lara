@@ -23,17 +23,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Vendor CSS-->
-    <link href="{{ asset('admin/vendor/animsition/animsition.min.css') }}" rel="stylesheet" media="all">
+    {{-- <link href="{{ asset('admin/vendor/animsition/animsition.min.css') }}" rel="stylesheet" media="all">
     <link href="{{ asset('admin/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet" media="all">
     <link href="{{ asset('admin/vendor/wow/animate.css') }}" rel="stylesheet" media="all">
     <link href="{{ asset('admin/vendor/css-hamburgers/hamburgers.min.css') }}" rel="stylesheet" media="all">
     <link href="{{ asset('admin/vendor/slick/slick.css') }}" rel="stylesheet" media="all">
     <link href="{{ asset('admin/vendor/select2/select2.min.css') }}" rel="stylesheet" media="all">
-    <link href="{{ asset('admin/vendor/perfect-scrollbar/perfect-scrollbar.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('admin/vendor/perfect-scrollbar/perfect-scrollbar.css') }}" rel="stylesheet" media="all"> --}}
 
     <!-- css  -->
     <link href="{{ asset('admin/css/theme.css') }}" rel="stylesheet" media="all">
 
+    @yield('head')
 </head>
     <link rel="icon" href="{{ asset('image/icon/ay japan bikes shop.png') }}">
 <body class="animsition">
@@ -48,6 +49,10 @@
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
+                        <li>
+                            <a href="{{ route('report#page') }}" class="text-decoration-none">
+                                <i class="fa-solid fa-chart-simple"></i>Report</a>
+                        </li>
                         <li>
                             <a href="{{ route('admin#homePage') }}" class="text-decoration-none">
                                 <i class="fas fa-chart-bar"></i>Category</a>
@@ -188,7 +193,7 @@
     <script src="{{ asset('admin/vendor/jquery-3.2.1.min.js') }}"></script>
 
     <!-- Vendor JS       -->
-    <script src="{{ asset('admin/vendor/slick/slick.min.js') }}">
+    {{-- <script src="{{ asset('admin/vendor/slick/slick.min.js') }}">
     </script>
     <script src="{{ asset('admin/vendor/wow/wow.min.js') }}"></script>
     <script src="{{ asset('admin/vendor/animsition/animsition.min.js') }}"></script>
@@ -200,17 +205,19 @@
     <script src="{{ asset('admin/vendor/circle-progress/circle-progress.min.js') }}"></script>
     <script src="{{ asset('admin/vendor/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
     <script src="{{ asset('admin/vendor/chartjs/Chart.bundle.min.js') }}"></script>
-    <script src="{{ asset('admin/vendor/select2/select2.min.js') }}">
+    <script src="{{ asset('admin/vendor/select2/select2.min.js') }}"> --}}
     </script>
 
     <!-- Main JS-->
     <script src="{{ asset('admin/js/main.js') }}"></script>
 
     {{-- jquery cdn  --}}
-    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script> --}}
 
     {{-- bootstrap js  --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    @yield('scriptLink')
 </body>
 
 @yield('scriptSource')

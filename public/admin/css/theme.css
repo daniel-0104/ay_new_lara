@@ -14649,3 +14649,10 @@ section {
 .vue-lists ul, .vue-lists ol {
     padding-left: 30px;
 }
+
+#report-total-box > .col-lg-4 > div{
+    background-color: rgba(44, 44, 203, 0.777);
+    color: white;
+    padding: 20px 10px;
+    border-radius: 8px;
+}

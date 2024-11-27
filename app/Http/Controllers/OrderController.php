@@ -43,11 +43,13 @@ class OrderController extends Controller
         $orders = order::where('order_code',$orderCode)->first();
         $orderLists = orderList::select('order_lists.*','products.image as bike_image','products.category_name as bike_category',
                                                         'helmets.image as helmet_image','helmets.type as helmet_category',
-                                                        'jackets.image as jacket_image','jackets.type as jacket_category')
+                                                        'jackets.image as jacket_image','jackets.type as jacket_category',
+                                                        'gloves.image as glove_image','gloves.type as glove_category')
                                 ->leftJoin('users','users.name','order_lists.user_name')
                                 ->leftJoin('products','products.name','order_lists.product_name')
                                 ->leftJoin('helmets','helmets.name','order_lists.product_name')
                                 ->leftJoin('jackets','jackets.name','order_lists.product_name')
+                                ->leftJoin('gloves','gloves.name','order_lists.product_name')
                                 ->where('order_code',$orderCode)
                                 ->get();
         return view('admin.order.view',compact('orders','orderLists'));

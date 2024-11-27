@@ -60,6 +60,8 @@
                                                 <img src="{{ asset('storage/'.$o->bike_image) }}" class="img-thumbnail shadow-sm">
                                             @elseif($o->helmet_image)
                                                 <img src="{{ asset('storage/'.$o->helmet_image) }}" class="img-thumbnail shadow-sm">
+                                            @elseif($o->glove_image)
+                                                <img src="{{ asset('storage/'.$o->glove_image) }}" class="img-thumbnail shadow-sm">
                                             @elseif($o->jacket_image)
                                                 <img src="{{ asset('storage/'.$o->jacket_image) }}" class="img-thumbnail shadow-sm">
                                             @endif
@@ -72,6 +74,8 @@
                                                 {{ $o->helmet_category }}
                                             @elseif($o->jacket_category)
                                                 {{ $o->jacket_category }}
+                                            @elseif($o->glove_category)
+                                                {{ $o->glove_category }}
                                             @endif
                                         </td>
                                         <td>{{ $o->created_at->format('j-F-Y') }}</td>
